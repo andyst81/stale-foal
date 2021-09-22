@@ -36,8 +36,8 @@ export default function handler(req, res) {
       { 'name': 'Nihonium'},
       { 'name': 'Flerovium'},
       { 'name': 'Moscovium'},
-      { 'name': 'Livermorium'},
-      { 'name': 'Tennessine' }
+      { 'name': 'Livermorium'}
+      // { 'name': 'Tennessine' }
     ]
   )
 }
