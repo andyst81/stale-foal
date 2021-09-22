@@ -1,5 +1,5 @@
 
-export default function key() {
+export default function Key() {
   return (
     <div className="py-4">
       <div className="font-bold text-xl text-gray-800">Rarities Color Key</div>
