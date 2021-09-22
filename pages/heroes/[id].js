@@ -1,5 +1,6 @@
 import Card from '../../src/components/card'
 import Header from '../../src/components/header'
+import Key from '../../src/components/key'
 import Footer from '../../src/components/footer'
 
 const Hero = ({ token }) => {
@@ -7,6 +8,9 @@ const Hero = ({ token }) => {
   return (
     <div>
       <Header />
+      <div className="container mx-auto">
+        <Key />
+      </div>
       {token.map((q, index) => (
           <div className="container mx-auto flex justify-center" key={index}>
             <div className="md:w-1/2 p-4">

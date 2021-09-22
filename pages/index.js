@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {useRouter} from 'next/router'
 import Head from 'next/head'
 import Header from '../src/components/header'
+import Key from '../src/components/key'
 import Footer from '../src/components/footer'
 import {options} from '../src/options'
 
@@ -49,6 +50,7 @@ export default function Home() {
 
         <main className="container px-5 py-12 mx-auto ">
           <div>
+            <Key />
             <form>
               <label className="text-gray-700">Element ID Number:</label>
               <input type='text' className="my-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"

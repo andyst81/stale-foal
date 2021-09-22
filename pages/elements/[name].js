@@ -1,5 +1,6 @@
 import Header from '../../src/components/header'
 import Footer from '../../src/components/footer'
+import Key from '../../src/components/key'
 import Card from '../../src/components/card'
 
 const Element = ({ token }) => {
@@ -7,6 +8,10 @@ const Element = ({ token }) => {
   return (
     <div>
       <Header />
+      <div className="container mx-auto">
+        <Key />
+      </div>
+      
       {token.map((element, index) => (            
           <div className="container mx-auto flex flex-wrap" key={index}>
             {element.map((q, index) => (
