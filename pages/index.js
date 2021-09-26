@@ -9,7 +9,10 @@ import {options} from '../src/options'
 export default function Home() {
 
   const [token, setToken] = useState("")
+  const [tButton, setTButton] = useState(false)
   const [value, setValue] = useState("default")
+  const [vButton, setVButton] = useState(false)
+
   const router = useRouter()
 
   const preventDefault = f => e => {
@@ -20,6 +23,7 @@ export default function Home() {
   const handleParam = setToken => e => setToken(e.target.value)
 
   const tokenButtonClick = preventDefault(() => {
+    setTButton(true)
     if(isNaN(token)) {
       alert("Please enter an element ID number to view the token")
       return
@@ -30,6 +34,7 @@ export default function Home() {
   })
 
   function elemButtonClick() {
+    setVButton(true)
     router.push({
       pathname: `elements/${value}`
     })
@@ -62,6 +67,7 @@ export default function Home() {
                 <button className="px-5 py-3 rounded-md text-sm font-medium text-gray-700 border border-gray-300 shadow-sm hover:text-indigo-400 hover:border-indigo-300 hover:ring hover:ring-indigo-200 hover:ring-opacity-50"
                   onClick={tokenButtonClick}>
                   Search
+                  <svg className="animate-spin h-5 w-5 mr-3 text-gray-800" viewBox="0 0 24 24">...</svg>
                 </button>
               </span>
             </form>
@@ -78,13 +84,21 @@ export default function Home() {
                 ))}
              
               </select>
-              <span className="mb-2 flex justify-end">
-                <button className="px-5 py-3 rounded-md text-sm font-medium text-gray-700 border border-gray-300 shadow-sm hover:text-indigo-400 hover:border-indigo-300 hover:ring hover:ring-indigo-200 hover:ring-opacity-50"
-                  onClick={elemButtonClick}>
-                  Filter
-                </button>
-              </span>
-            </label>           
+              <div className='flex justify-end'>
+                <span className="mb-2 inline-flex">
+                  <button className="px-5 py-3 rounded-md text-sm font-medium text-gray-700 border border-gray-300 shadow-sm hover:text-indigo-400 hover:border-indigo-300 hover:ring hover:ring-indigo-200 hover:ring-opacity-50 inline-flex items-center"
+                    onClick={elemButtonClick}>
+                    Filter
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-grey-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+
+                  </button>
+                </span>
+              </div>
+            </label>    
+      
           </div>
         </main>
         <Footer/>

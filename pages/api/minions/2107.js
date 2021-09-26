@@ -1,0 +1,1 @@
+export default function handler (req, res) { res.status(200).json({'ID': '2107', 'name': 'Atomic Minion #2107', 'element': 'Sodium', 'group': '1', 'background': ['Grass', 'Day'], 'expression': 'Shy', 'frame': 'White Frame', 'image': 'QmbcoHGsCzGDMaTtnGRuHXdbjVV6bjncU51iPCf6cprbDY', 'left_item': 'None', 'right_item': 'Stem'})}

@@ -24,7 +24,7 @@ const Hero = ({ token }) => {
 }
 
 export async function getStaticPaths() {
-  const result = await fetch(`${process.env.SERVER_URL}/api/tokens`)
+  const result = await fetch(`${process.env.SERVER_URL}/api/heroes`)
   const heroes = await result.json()
 
   const paths = heroes.map((hero) => {
@@ -39,7 +39,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const { id } = context.query
-  const res = await fetch(`${process.env.SERVER_URL}api/heroes/${params.id}`)
+  const res = await fetch(`${process.env.SERVER_URL}api/heroes/${params.ID}`)
   const json = await res.json()
   const token = [json]
 
