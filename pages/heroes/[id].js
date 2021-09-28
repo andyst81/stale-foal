@@ -39,7 +39,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const { id } = context.query
-  const res = await fetch(`${process.env.SERVER_URL}api/heroes/${params.ID}`)
+  const res = await fetch(`${process.env.SERVER_URL}api/heroes/${params.id}`)
   const json = await res.json()
   const token = [json]
 

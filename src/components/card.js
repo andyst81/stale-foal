@@ -83,7 +83,7 @@ export default function Card(q) {
   return (
     <div className="p-6 rounded-lg border border-grey-50 flex-1">
       <Link href={`/heroes/${q.ID}`} passHref>
-        <Image className="rounded-full w-full object-cover object-center mb-6" 
+        <Image className="rounded-full w-full object-cover object-center mb-6 m-auto" 
           src={"https://ipfs.blockfrost.dev/ipfs/" + q.Image} 
           height='600vw'
           width='600vw'

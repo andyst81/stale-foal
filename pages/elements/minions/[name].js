@@ -1,7 +1,7 @@
-import Header from '../../src/components/header'
-import Footer from '../../src/components/footer'
-import Key from '../../src/components/key'
-import Card from '../../src/components/card'
+import Header from '../../../src/components/header'
+import Footer from '../../../src/components/footer'
+import Key from '../../../src/components/key'
+import MinionCard from '../../../src/components/minion'
 
 const Element = ({ token }) => {
 
@@ -16,7 +16,7 @@ const Element = ({ token }) => {
           <div className="container mx-auto flex flex-wrap" key={index}>
             {element.map((q, index) => (
             <div key={index} className="lg:w-1/3 md:w-1/2 p-4 flex flex-col">
-              <Card {...q=q} />
+              <MinionCard {...q=q} />
             </div> 
             ))}
           </div>
@@ -27,7 +27,7 @@ const Element = ({ token }) => {
 }
 
 export async function getStaticPaths() {
-  const result = await fetch(`${process.env.SERVER_URL}/api/elements`)
+  const result = await fetch(`${process.env.SERVER_URL}/api/elements/elements`)
   const elements = await result.json()
 
   const paths = elements.map((element) => ({
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   // const { id } = context.query
-  const res = await fetch(`${process.env.SERVER_URL}api/elements/${params.name}`)
+  const res = await fetch(`${process.env.SERVER_URL}api/elements/minions/${params.name}`)
   const json = await res.json()
   const token = [json]
 
