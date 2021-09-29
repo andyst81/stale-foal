@@ -27,7 +27,7 @@ const Element = ({ token }) => {
 }
 
 export async function getStaticPaths() {
-  const result = await fetch(`${process.env.SERVER_URL}/api/elements/elements`)
+  const result = await fetch(`${process.env.SERVER_URL}api/elements/elements`)
   const elements = await result.json()
 
   const paths = elements.map((element) => ({
