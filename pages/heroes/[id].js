@@ -8,6 +8,7 @@ const Hero = ({ token }) => {
   return (
     <div>
       <Header />
+
       <div className="container mx-auto">
         <Key />
       </div>
